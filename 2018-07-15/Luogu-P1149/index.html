@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="编程," />
+  <meta name="keywords" content="编程,题解,枚举," />
 
 
 
@@ -88,20 +88,20 @@
 
 
 
-<meta name="description" content="“简单”的矩阵乘法">
-<meta name="keywords" content="编程">
+<meta name="description" content="「枚举」的入门题目">
+<meta name="keywords" content="编程,题解,枚举">
 <meta property="og:type" content="article">
-<meta property="og:title" content="矩阵乘法">
-<meta property="og:url" content="https://blog.handwer-std.top/2018-03-10/matrix-mul/index.html">
+<meta property="og:title" content="洛谷P1149《火柴棒等式》">
+<meta property="og:url" content="https://blog.handwer-std.top/2018-07-15/Luogu-P1149/index.html">
 <meta property="og:site_name" content="Handwer&#39;s Blog">
-<meta property="og:description" content="“简单”的矩阵乘法">
+<meta property="og:description" content="「枚举」的入门题目">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax2x.com/2018/03/10/EThWN.png">
-<meta property="og:updated_time" content="2018-06-23T00:17:15.669Z">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/49.png">
+<meta property="og:updated_time" content="2018-07-15T14:27:42.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="矩阵乘法">
-<meta name="twitter:description" content="“简单”的矩阵乘法">
-<meta name="twitter:image" content="https://s1.ax2x.com/2018/03/10/EThWN.png">
+<meta name="twitter:title" content="洛谷P1149《火柴棒等式》">
+<meta name="twitter:description" content="「枚举」的入门题目">
+<meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/49.png">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.handwer-std.top/2018-03-10/matrix-mul/"/>
+  <link rel="canonical" href="https://blog.handwer-std.top/2018-07-15/Luogu-P1149/"/>
 
 
 
 
 
-  <title>矩阵乘法 | Handwer's Blog</title>
+  <title>洛谷P1149《火柴棒等式》 | Handwer's Blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.handwer-std.top/2018-03-10/matrix-mul/">
+    <link itemprop="mainEntityOfPage" href="https://blog.handwer-std.top/2018-07-15/Luogu-P1149/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Handwer STD">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">矩阵乘法</h1>
+          <h1 class="post-title" itemprop="name headline">洛谷P1149《火柴棒等式》</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T21:07:06+08:00">
-                2018-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T21:41:54+08:00">
+                2018-07-15
               </time>
             
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018-03-10/matrix-mul/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018-03-10/matrix-mul/" itemprop="commentCount"></span>
+                <a href="/2018-07-15/Luogu-P1149/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018-07-15/Luogu-P1149/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -352,20 +352,57 @@
 
       
         <blockquote>
-<p>“简单”的矩阵乘法</p>
+<p>「枚举」的入门题目</p>
 </blockquote>
 <a id="more"></a>
-<p>矩阵乘法，就是将两个矩阵相乘</p>
-<p><img src="https://s1.ax2x.com/2018/03/10/EThWN.png" alt="EThWN.png"></p>
-<p>现要求写一个程序，可以实现矩阵相乘。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行三个正整数 $n$、$p$、$m$，表示矩阵的长宽。<br>之后的$n$ 行，每行 $p$ 个整数，表示矩阵 $A$。<br>之后的 $p$ 行，每行 $m$ 个整数，表示矩阵 $B$。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出 $n$ 行，每行 $m$ 个整数，表示矩阵 $A×B$ ，每个数模 $10 ^ 9 + 7$ 输出。</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3 4 5</span><br><span class="line">-2 -8 -9 8</span><br><span class="line">-10 0 6 -8</span><br><span class="line">-10 -6 6 9</span><br><span class="line">4 -7 5 -5 9</span><br><span class="line">10 -2 -10 5 5</span><br><span class="line">-3 -7 -3 8 -2</span><br><span class="line">-6 7 7 3 -2</span><br></pre></td></tr></table></figure>
-<p><strong>良心数据</strong></p>
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">999999898 149 153 999999929 999999951</span><br><span class="line">999999997 999999979 999999883 74 999999921                                                 </span><br><span class="line">999999835 103 55 95 999999857</span><br></pre></td></tr></table></figure>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">505</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF  = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD  = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Matrix</span>&#123;</span></span><br><span class="line">	LL arr[maxn][maxn];</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	Matrix <span class="keyword">operator</span> * (<span class="keyword">const</span> Matrix &amp;b)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="comment">// 重载运算符</span></span><br><span class="line">      	Matrix res;</span><br><span class="line">		<span class="built_in">memset</span>(res.arr,<span class="number">0</span>,<span class="keyword">sizeof</span>(res.arr));</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; b.m;j++)</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; m;k++)&#123;</span><br><span class="line">					(res.arr[i][j] += arr[i][k] * b.arr[k][j] % MOD) %= MOD;</span><br><span class="line">				&#125;</span><br><span class="line">		res.n = n;res.m = b.m;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;a,b,ans;</span><br><span class="line"><span class="comment">// 用结构体来储存矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> n,p,m;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;n,&amp;p,&amp;m);</span><br><span class="line">	</span><br><span class="line">	a.n = n;a.m = p;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; p;j++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a.arr[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">// 输入矩阵</span></span><br><span class="line">	b.n = p;b.m = m;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; p;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; m;j++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;b.arr[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	ans = a * b;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; m - <span class="number">1</span>;j++)&#123;</span><br><span class="line">		    (ans.arr[i][j] += MOD) %= MOD;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%lld "</span>,ans.arr[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		(ans.arr[i][m - <span class="number">1</span>] += MOD) %= MOD;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans.arr[i][m - <span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 输出矩阵</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<center><small>图片 by <a href="https://simimg.com/" target="_blank" rel="noopener">simimg.com</a> </small></center>
+<p><a href="https://www.luogu.org/problemnew/show/P1149" target="_blank" rel="noopener">题目地址</a></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你n根火柴棍，你可以拼出多少个形如$ A+B=C$的等式？等式中的 $A 、 B 、 C$ 是用火柴棍拼出的整数（若该数非零，则最高位不能是 $0$ ）。用火柴棍拼数字 $0-9$ 的拼法如图所示：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/49.png" alt="img"></p>
+<center><small>图片来自洛谷</small></center>
 
+<p>注意：</p>
+<ol>
+<li>加号与等号各自需要两根火柴棍</li>
+<li>如果 $A≠B$ ，则 $A+B=C$ 与 $B+A=C$ 视为不同的等式( $A,B,C&gt;=0$ )</li>
+<li>$n$ 根火柴棍必须全部用上</li>
+</ol>
+<h1 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h1><p><strong>输入格式：</strong></p>
+<p>一个整数 $n$($n&lt;=24$) 。</p>
+<p><strong>输出格式：</strong></p>
+<p>一个整数，能拼成的不同等式的数目。</p>
+<p><strong>输入样例#1：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出样例#1：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure></p>
+<p><strong>输入样例#2：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">18</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出样例#2：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure></p>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>【输入输出样例1解释】</p>
+<p>$2$ 个等式为 $0+1=1$ 和 $1+0=1$ 。</p>
+<p>【输入输出样例2解释】</p>
+<p>$9$ 个等式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0+4=4</span><br><span class="line">0+11=11</span><br><span class="line">1+10=11</span><br><span class="line">2+2=4</span><br><span class="line">2+7=9</span><br><span class="line">4+0=4</span><br><span class="line">7+2=9</span><br><span class="line">10+1=11</span><br><span class="line">11+0=11</span><br></pre></td></tr></table></figure>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><h2 id="枚举思路"><a href="#枚举思路" class="headerlink" title="枚举思路"></a>枚举思路</h2><p>我们可以枚举$A$和$B$</p>
+<big><strong>上界？</strong></big>
+
+<p>手算啊</p>
+<p>$n&lt;=24$，去掉符号用的4根火柴棒，相当于是「$n&lt;=20$」</p>
+<p>再$\frac{n}{2}$（这里只考虑有$A$和$B$两个数字），可得</p>
+<blockquote>
+<p>对于某一个数字，可调用的火柴棒共有10个</p>
+</blockquote>
+<p>由于使用火柴棒数量最少的$1$要使用2根，所以我们假设两个数字都为$11111$，但是显然这样是不成立的，因为$2\times5 + 2 * 5$就已经达到$20$了，没有火柴棒再放第三个数字，那么由此可粗略得出</p>
+<blockquote>
+<p>对于某一个数字，它最高有5位</p>
+</blockquote>
+<p>于是我们可以选择枚举到$9999$，洛谷的评测机上也不会TLE</p>
+<p>当然CCF的老爷机就不一定了（</p>
+<p>于是我们可以选择再精确一点</p>
+<p>// 未完待<strong>续</strong></p>
+<p>枚举之后相加，取出所用的火柴棒数，进行判断就好了</p>
+<h2 id="预处理思路"><a href="#预处理思路" class="headerlink" title="预处理思路"></a>预处理思路</h2><p>火柴棒数怎么求？</p>
+<p>新建一个数组 f[10000 * 2 + 10] ，表示i这个数字需要用f[i]根火柴</p>
+<p>题目已经给出了f[0~9]，如何处理出f[10~(10000*2)]？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f[i] = f[i/<span class="number">10</span>] + f[i%<span class="number">10</span>]; <span class="comment">// (i &gt;= 10)</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这里的i/10可以取它除了个位上其他位的数，在前面已经处理过，</span></span><br><span class="line"><span class="comment">所以可以直接使用；这里的i%10可以取它个位上的数，也处理过，</span></span><br><span class="line"><span class="comment">可以直接使用。两个火柴棒数目一相加，就能获得火柴棒的总数。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>循环一遍就好了</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> sticks[<span class="number">10001</span> * <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *<span class="keyword">const</span> argv[])</span> </span>&#123;</span><br><span class="line">	sticks[<span class="number">0</span>] = sticks[<span class="number">6</span>] = sticks[<span class="number">9</span>] = <span class="number">6</span>;</span><br><span class="line">	sticks[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">	sticks[<span class="number">2</span>] = sticks[<span class="number">3</span>] = sticks[<span class="number">5</span>] = <span class="number">5</span>;</span><br><span class="line">	sticks[<span class="number">4</span>] = <span class="number">4</span>;</span><br><span class="line">	sticks[<span class="number">7</span>] = <span class="number">3</span>;</span><br><span class="line">	sticks[<span class="number">8</span>] = <span class="number">7</span>;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">10</span>; i &lt;= <span class="number">20000</span>; ++i) &#123;</span><br><span class="line">		sticks[i] = sticks[i/<span class="number">10</span>] + sticks[i%<span class="number">10</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">9999</span>; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">9999</span>; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (sticks[i] + <span class="number">2</span> + sticks[j] + <span class="number">2</span> + sticks[i+j] == n) ++sum;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; sum &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -386,7 +423,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.handwer-std.top/2018-03-10/matrix-mul/" title="矩阵乘法">https://blog.handwer-std.top/2018-03-10/matrix-mul/</a>
+    <a href="https://blog.handwer-std.top/2018-07-15/Luogu-P1149/" title="洛谷P1149《火柴棒等式》">https://blog.handwer-std.top/2018-07-15/Luogu-P1149/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -403,6 +440,10 @@
           
             <a href="/tags/编程/" rel="tag"># 编程</a>
           
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+            <a href="/tags/枚举/" rel="tag"># 枚举</a>
+          
         </div>
       
 
@@ -414,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-03-05/windows10/" rel="next" title="Windows 10 体验记">
-                <i class="fa fa-chevron-left"></i> Windows 10 体验记
+              <a href="/2018-07-06/BipartiteGraph/" rel="next" title="二分图匹配学习笔记 & HDU2063 题解">
+                <i class="fa fa-chevron-left"></i> 二分图匹配学习笔记 & HDU2063 题解
               </a>
             
           </div>
@@ -423,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018-03-23/CPP-Fast-RW/" rel="prev" title="C++ 快速读入 模板">
-                C++ 快速读入 模板 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -591,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">3.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例"><span class="nav-number">4.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">5.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入输出格式"><span class="nav-number">2.</span> <span class="nav-text">输入输出格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-number">3.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">4.</span> <span class="nav-text">解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举思路"><span class="nav-number">4.1.</span> <span class="nav-text">枚举思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理思路"><span class="nav-number">4.2.</span> <span class="nav-text">预处理思路</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">5.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
             
 
           </div>
